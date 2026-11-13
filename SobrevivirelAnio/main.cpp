@@ -6,7 +6,6 @@ int main()
 {
 
 
-asgfdhuaskvfhasbihcbasilbuci
-ajbnscfijbaehjkdsfbv
+
     return 0;
 }
