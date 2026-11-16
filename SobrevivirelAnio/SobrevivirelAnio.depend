@@ -1,0 +1,50 @@
+# depslib dependency file v1.0
+1794853100 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\main.cpp
+	<iostream>
+	<ctime>
+	<cstdlib>
+	"menu.h"
+
+1794853352 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\menu.h
+	<string>
+
+1794864259 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\menu.cpp
+	<iostream>
+	<iomanip>
+	"rlutil.h"
+	"menu.h"
+	"juego.h"
+
+1783078515 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1794865201 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\juego.h
+
+1794864838 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\eventos.cpp
+
+1794864939 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\inversiones.cpp
+
+1794865201 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\juego.cpp
+	<iostream>
+	<iomanip>
+	"rlutil.h"
+	"juego.h"
+	"eventos.h"
+	"inversiones.h"
+	"menu.h"
+
+1794864854 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\eventos.h
+
+1794864942 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\inversiones.h
+
