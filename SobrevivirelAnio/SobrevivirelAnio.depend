@@ -1,17 +1,16 @@
 # depslib dependency file v1.0
-1794853100 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\main.cpp
+1795018115 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\main.cpp
 	<iostream>
 	<ctime>
 	<cstdlib>
 	"menu.h"
 
-1794853352 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\menu.h
+1795018115 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\menu.h
 	<string>
 
-1794864259 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\menu.cpp
+1795018252 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\menu.cpp
 	<iostream>
-	<iomanip>
-	"rlutil.h"
+	<cstdlib>
 	"menu.h"
 	"juego.h"
 
@@ -29,22 +28,28 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1794865201 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\juego.h
+1795018327 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\juego.h
+	<string>
 
-1794864838 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\eventos.cpp
-
-1794864939 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\inversiones.cpp
-
-1794865201 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\juego.cpp
+1795018470 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\eventos.cpp
 	<iostream>
-	<iomanip>
-	"rlutil.h"
+	<cstdlib>
+	<string>
+	"eventos.h"
+
+1795018606 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\inversiones.cpp
+	<iostream>
+	"inversiones.h"
+
+1795018379 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\juego.cpp
+	<iostream>
+	<cstdlib>
 	"juego.h"
+	"menu.h"
 	"eventos.h"
 	"inversiones.h"
-	"menu.h"
 
-1794864854 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\eventos.h
+1795018470 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\eventos.h
 
-1794864942 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\inversiones.h
+1795018606 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\inversiones.h
 

@@ -2,18 +2,28 @@
 #define MENU_H_INCLUDED
 
 #include <string>
+
 using namespace std;
 
-// Coordina el menu principal y conserva en alcance local el Highscore de la sesion
+// Controla el ciclo del menu principal y aloja las variables de la sesion
 void ejecutarMenuPrincipal();
 
-// Muestra el mejor resultado registrado durante la ejecucion actual del programa
+// Muestra el menu principal y devuelve la opcion ingresada
+int pedirOpcionMenu();
+
+// Muestra el ranking de la sesion actual
 void mostrarHighscore(int sesion_cantidad_partidas, float sesion_mejor_patrimonio, string sesion_mejor_jugador);
 
-// Muestra las definiciones del Glosario Financiero (consultable desde el menu o durante la partida)
+// Controla el submenu del glosario financiero (12 definiciones)
 void mostrarGlosario();
 
-// Solicita confirmacion S/N antes de cerrar el programa
+// Imprime la definicion elegida en el glosario usando vectores
+void mostrarDefinicionGlosario(int opcion_glosario);
+
+// Pide confirmacion antes de cerrar el programa
 bool confirmarSalida();
+
+// Pausa la ejecucion esperando que el usuario presione ENTER
+void pausarPantalla(string mensaje);
 
 #endif // MENU_H_INCLUDED

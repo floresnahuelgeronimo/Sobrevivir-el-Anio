@@ -1,143 +1,195 @@
 #include <iostream>
-#include <iomanip>
-#include "rlutil.h"
+#include <cstdlib>
 #include "menu.h"
 #include "juego.h"
 
 using namespace std;
 
-void ejecutarMenuPrincipal() {
-    int sesion_cantidad_partidas = 0;
-    float sesion_mejor_patrimonio = 0.0;
-    string sesion_mejor_jugador = "Ninguno";
+void ejecutarMenuPrincipal()
+{
+    // Variables de sesion (locales a esta funcion, respetan los nombres del PDF)
+    int    sesion_cantidad_partidas = 0;
+    float  sesion_mejor_patrimonio  = 0.0;
+    string sesion_mejor_jugador     = "";
 
- int opcion = -1;
-    bool salirConfirmado = false;
+    bool salir = false;
 
-    do {
-        rlutil::cls();
-        rlutil::setColor(rlutil::CYAN);
-        cout << "========================================" << endl;
-        cout << "           SOBREVIVIR EL ANIO           " << endl;
-        cout << "========================================" << endl;
-        rlutil::setColor(rlutil::WHITE);
-        cout << "1. Nueva Partida" << endl;
-        cout << "2. Highscore de la sesion" << endl;
-        cout << "3. Glosario Financiero" << endl;
-        cout << "0. Salir" << endl;
-        rlutil::setColor(rlutil::CYAN);
-        cout << "========================================" << endl;
-        rlutil::setColor(rlutil::WHITE);
-        cout << "Ingrese una opcion: ";
-        cin >> opcion;
+    while (!salir)
+    {
+        int opcion_menu = pedirOpcionMenu();
 
-        switch (opcion) {
-            case 1:
-                iniciarNuevaPartida(sesion_cantidad_partidas, sesion_mejor_patrimonio, sesion_mejor_jugador);
-                break;
-            case 2:
-                mostrarHighscore(sesion_cantidad_partidas, sesion_mejor_patrimonio, sesion_mejor_jugador);
-                break;
-            case 3:
-                mostrarGlosario();
-                break;
-            case 0:
-                salirConfirmado = confirmarSalida();
-                break;
-            default:
-                rlutil::setColor(rlutil::LIGHTRED);
-                cout << "\nOpcion invalida. Presione una tecla para reintentar..." << endl;
-                rlutil::setColor(rlutil::WHITE);
-                rlutil::anykey();
-                break;
+        switch (opcion_menu)
+        {
+        case 1:
+            iniciarNuevaPartida(sesion_cantidad_partidas, sesion_mejor_patrimonio, sesion_mejor_jugador);
+            break;
+
+        case 2:
+            mostrarHighscore(sesion_cantidad_partidas, sesion_mejor_patrimonio, sesion_mejor_jugador);
+            break;
+
+        case 3:
+            mostrarGlosario();
+            break;
+
+        case 0:
+            salir = confirmarSalida();
+            break;
+
+        default:
+            cout << endl << "  Opcion invalida. Intenta de nuevo." << endl;
+            pausarPantalla("  Presiona ENTER para continuar...");
+            break;
         }
-    } while (!salirConfirmado);
+    }
 }
 
-void mostrarHighscore(int sesion_cantidad_partidas, float sesion_mejor_patrimonio, string sesion_mejor_jugador) {
-    rlutil::cls();
-    rlutil::setColor(rlutil::YELLOW);
-    cout << "========================================" << endl;
-    cout << "         HIGHSCORE DE LA SESION         " << endl;
-    cout << "========================================" << endl;
-    rlutil::setColor(rlutil::WHITE);
+int pedirOpcionMenu()
+{
+    int opcion;
+    system("cls");
+    cout << "============================================" << endl;
+    cout << "         SOBREVIVIR EL ANIO                 " << endl;
+    cout << "   Simulador de Finanzas en Argentina       " << endl;
+    cout << "============================================" << endl;
+    cout << "  1. Nueva Partida                          " << endl;
+    cout << "  2. Highscore de la sesion                 " << endl;
+    cout << "  3. Glosario Financiero                    " << endl;
+    cout << "  0. Salir                                  " << endl;
+    cout << "============================================" << endl;
+    cout << "  Ingrese una opcion: ";
+    cin  >> opcion;
+    cin.ignore();
+    return opcion;
+}
 
-    if (sesion_cantidad_partidas == 0) {
-        cout << "Todavia no se registraron partidas finalizadas en esta sesion." << endl;
-    } else {
-        cout << fixed << setprecision(2);
-        cout << "Partidas jugadas en la sesion : " << sesion_cantidad_partidas << endl;
-        cout << "Mejor jugador                 : " << sesion_mejor_jugador << endl;
-        cout << "Mejor patrimonio real final   : $ " << sesion_mejor_patrimonio << endl;
+void mostrarHighscore(int sesion_cantidad_partidas, float sesion_mejor_patrimonio, string sesion_mejor_jugador)
+{
+    system("cls");
+    cout << "============================================" << endl;
+    cout << "         HIGHSCORE DE LA SESION             " << endl;
+    cout << "============================================" << endl;
+    cout << endl;
+
+    if (sesion_cantidad_partidas == 0)
+    {
+        cout << "  Todavia no se jugo ninguna partida." << endl;
+        cout << "  Inicia una partida para ver el ranking!" << endl;
+    }
+    else
+    {
+        cout << "  Partidas jugadas:      " << sesion_cantidad_partidas << endl;
+        cout << "  Mejor jugador/a:       " << sesion_mejor_jugador     << endl;
+        cout << "  Mejor patrimonio real: $" << sesion_mejor_patrimonio << endl;
     }
 
-    rlutil::setColor(rlutil::YELLOW);
-    cout << "========================================" << endl;
-    rlutil::setColor(rlutil::WHITE);
-    cout << "Presione cualquier tecla para volver...";
-    rlutil::anykey();
+    pausarPantalla("  Presiona ENTER para volver al menu...");
 }
 
-void mostrarGlosario() {
-    rlutil::cls();
-    rlutil::setColor(rlutil::LIGHTCYAN);
-    cout << "======================================================================" << endl;
-    cout << "                         GLOSARIO FINANCIERO                          " << endl;
-    cout << "======================================================================" << endl;
-    rlutil::setColor(rlutil::WHITE);
+void mostrarGlosario()
+{
+    int opcion_glosario = -1;
+    while (opcion_glosario != 0)
+    {
+        system("cls");
+        cout << "============================================" << endl;
+        cout << "          GLOSARIO FINANCIERO               " << endl;
+        cout << "============================================" << endl;
+        cout << "  1.  Inflacion"                    << endl;
+        cout << "  2.  Poder adquisitivo"            << endl;
+        cout << "  3.  Salario real vs nominal"      << endl;
+        cout << "  4.  Fondo de emergencia"          << endl;
+        cout << "  5.  Diversificacion"              << endl;
+        cout << "  6.  Costo de oportunidad"         << endl;
+        cout << "  7.  Volatilidad"                  << endl;
+        cout << "  8.  Liquidez"                     << endl;
+        cout << "  9.  Indexacion"                   << endl;
+        cout << "  10. ETF (Exchange-Traded Fund)"   << endl;
+        cout << "  11. Patrimonio real"              << endl;
+        cout << "  12. Patrimonio inicial"           << endl;
+        cout << "  0.  Volver al menu principal"     << endl;
+        cout << "============================================" << endl;
+        cout << "  Opcion: ";
+        cin  >> opcion_glosario;
+        cin.ignore();
 
-    cout << "1. Inflacion: Aumento generalizado y sostenido de los precios de bienes" << endl;
-    cout << "   y servicios. Hace que el dinero valga menos con el tiempo." << endl;
-
-    cout << "2. Poder adquisitivo: Cantidad de bienes y servicios que se pueden" << endl;
-    cout << "   comprar con una suma de dinero. Disminuye cuando hay inflacion." << endl;
-
-    cout << "3. Salario real vs. nominal: El nominal es el numero del recibo. El real" << endl;
-    cout << "   mide cuanto se puede comprar. Si la inflacion supera al sueldo, cae." << endl;
-
-    cout << "4. Fondo de emergencia: Reserva de dinero liquido para cubrir imprevistos" << endl;
-    cout << "   sin necesidad de endeudarse ni vender inversiones." << endl;
-
-    cout << "5. Diversificacion: Estrategia de distribuir el dinero entre distintos" << endl;
-    cout << "   instrumentos para reducir el riesgo ('no poner todo en una canasta')." << endl;
-
-    cout << "6. Costo de oportunidad: Valor de la mejor alternativa que se resigna" << endl;
-    cout << "   al tomar una decision (ej. dejar pesos quietos sin invertir)." << endl;
-
-    cout << "7. Volatilidad: Medida de cuanto varia el precio de un activo (como BTC)." << endl;
-
-    cout << "8. Liquidez: Facilidad con la que un activo se convierte en efectivo." << endl;
-
-    cout << "9. Indexacion: Ajuste periodico de un contrato (ej. alquiler) segun un" << endl;
-    cout << "   indice de precios para mantener su valor real." << endl;
-
-    cout << "10. ETF (Exchange-Traded Fund): Fondo que cotiza en bolsa y replica un" << endl;
-    cout << "    indice como el S&P 500, invirtiendo en muchas empresas a bajo costo." << endl;
-
-    cout << "11. Patrimonio real: Disponible en pesos + Fondo de emergencia +" << endl;
-    cout << "    Inversiones pesificadas, ajustado por la inflacion acumulada." << endl;
-
-    cout << "12. Patrimonio inicial: Dinero con el que se comienza el juego ($150.000)." << endl;
-
-    rlutil::setColor(rlutil::LIGHTCYAN);
-    cout << "======================================================================" << endl;
-    rlutil::setColor(rlutil::WHITE);
-    cout << "Presione cualquier tecla para continuar...";
-    rlutil::anykey();
-}
-
-bool confirmarSalida() {
-    char respuesta;
-    do {
-        cout << "Esta seguro que desea salir del juego? (S/N): ";
-        cin >> respuesta;
-        if (respuesta == 'S' || respuesta == 's') {
-            cout << "Gracias por jugar a Sobrevivir el Anio. Hasta pronto!" << endl;
-            return true;
-        } else if (respuesta == 'N' || respuesta == 'n') {
-            return false;
-        } else {
-            cout << "Ingreso invalido. Responda con S o N." << endl;
+        if (opcion_glosario != 0)
+        {
+            mostrarDefinicionGlosario(opcion_glosario);
+            pausarPantalla("  Presiona ENTER para volver al glosario...");
         }
-    } while (true);
+    }
+}
+
+void mostrarDefinicionGlosario(int opcion_glosario)
+{
+    string titulos[12] = {
+        "INFLACION",
+        "PODER ADQUISITIVO",
+        "SALARIO REAL vs SALARIO NOMINAL",
+        "FONDO DE EMERGENCIA",
+        "DIVERSIFICACION",
+        "COSTO DE OPORTUNIDAD",
+        "VOLATILIDAD",
+        "LIQUIDEZ",
+        "INDEXACION",
+        "ETF (Exchange-Traded Fund)",
+        "PATRIMONIO REAL",
+        "PATRIMONIO INICIAL"
+    };
+
+    string definiciones[12] = {
+        "Aumento generalizado y sostenido de los\n  precios de bienes y servicios. Hace que\n  el dinero valga menos con el tiempo.",
+        "Cantidad de bienes y servicios que se\n  pueden comprar con una suma de dinero.\n  Disminuye cuando hay inflacion.",
+        "Nominal: el numero en el recibo de sueldo.\n  Real: cuanto se puede comprar con ese dinero.\n  Si la inflacion supera al aumento del sueldo,\n  el salario real cae.",
+        "Reserva de dinero liquido disponible para\n  cubrir gastos imprevistos sin necesidad de\n  endeudarse ni vender inversiones a perdida.",
+        "Estrategia de distribuir el dinero entre\n  distintos instrumentos para reducir el\n  riesgo total. 'No poner todos los huevos\n  en la misma canasta.'",
+        "El valor de la mejor alternativa que se\n  resigna al tomar una decision. Guardar\n  plata en pesos tiene el costo de oportunidad\n  de no invertirla.",
+        "Medida de cuanto varia el precio de un\n  activo. Un instrumento muy volatil (como\n  Bitcoin) puede subir o bajar mucho en\n  poco tiempo.",
+        "Facilidad con la que un activo se puede\n  convertir en dinero disponible. El efectivo\n  es el mas liquido; los inmuebles, el menos.",
+        "Mecanismo por el cual el valor de un\n  contrato (como un alquiler) se ajusta\n  periodicamente segun un indice de precios.",
+        "Fondo de inversion que cotiza en bolsa y\n  replica el comportamiento de un indice,\n  como el S&P 500. Permite invertir en muchas\n  empresas a la vez con bajo costo.",
+        "Saldo disponible en pesos + Fondo de\n  emergencia + Inversiones (pesificadas),\n  ajustado por la inflacion acumulada.",
+        "Dinero con el que se comienza el juego\n  ($150.000 pesos)."
+    };
+
+    system("cls");
+    cout << "============================================" << endl;
+    if (opcion_glosario >= 1 && opcion_glosario <= 12)
+    {
+        cout << "  " << titulos[opcion_glosario - 1] << endl;
+        cout << "--------------------------------------------" << endl;
+        cout << "  " << definiciones[opcion_glosario - 1] << endl;
+    }
+    else
+    {
+        cout << "  Opcion invalida." << endl;
+    }
+    cout << "============================================" << endl;
+}
+
+bool confirmarSalida()
+{
+    char respuesta;
+    cout << endl << "  Seguro que deseas salir del juego? (S/N): ";
+    cin  >> respuesta;
+    cin.ignore();
+
+    if (respuesta == 'S' || respuesta == 's')
+    {
+        system("cls");
+        cout << "============================================" << endl;
+        cout << "  Hasta la proxima!" << endl;
+        cout << "  Recorda: la inflacion no descansa." << endl;
+        cout << "============================================" << endl;
+        return true;
+    }
+    return false;
+}
+
+void pausarPantalla(string mensaje)
+{
+    cout << endl;
+    cout << mensaje;
+    cin.get();
 }
