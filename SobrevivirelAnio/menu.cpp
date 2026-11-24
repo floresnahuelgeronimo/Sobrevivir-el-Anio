@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include "menu.h"
 #include "juego.h"
-
+#include "Creditos.h"
 using namespace std;
 
 void ejecutarMenuPrincipal()
@@ -31,6 +31,9 @@ void ejecutarMenuPrincipal()
         case 3:
             mostrarGlosario();
             break;
+        case 4:
+            mostrarcreditos();
+            break;
 
         case 0:
             salir = confirmarSalida();
@@ -49,12 +52,13 @@ int pedirOpcionMenu()
     int opcion;
     system("cls");
     cout << "============================================" << endl;
-    cout << "         SOBREVIVIR EL ANIO                 " << endl;
+    cout << "         SOBREVIVIR EL AÑO                 " << endl;
     cout << "   Simulador de Finanzas en Argentina       " << endl;
     cout << "============================================" << endl;
     cout << "  1. Nueva Partida                          " << endl;
     cout << "  2. Highscore de la sesion                 " << endl;
     cout << "  3. Glosario Financiero                    " << endl;
+    cout << "  4. Creditos                               " << endl;
     cout << "  0. Salir                                  " << endl;
     cout << "============================================" << endl;
     cout << "  Ingrese una opcion: ";
