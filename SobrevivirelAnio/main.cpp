@@ -4,8 +4,7 @@
 #include <cstdlib>
 
 #include "menu.h"
-#include "portada.h"
-
+#include "Visuales.h"
 using namespace std;
 
 int main() {

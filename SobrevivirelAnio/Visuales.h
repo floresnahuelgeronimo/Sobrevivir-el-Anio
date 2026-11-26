@@ -6,5 +6,5 @@ void mostrarGlosario();
 
 void mostrarDefinicionGlosario(int opcion_glosario);
 
-
+void mostrarportada();
 #endif // VISUALES_H_INCLUDED

@@ -1,6 +1,0 @@
-#ifndef GLOSARIO_H_INCLUDED
-#define GLOSARIO_H_INCLUDED
-
-
-
-#endif // GLOSARIO_H_INCLUDED

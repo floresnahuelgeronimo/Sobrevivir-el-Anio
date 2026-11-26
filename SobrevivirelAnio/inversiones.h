@@ -1,4 +1,4 @@
-#ifndef INVERSIONES_H_INCLUDED
+    #ifndef INVERSIONES_H_INCLUDED
 #define INVERSIONES_H_INCLUDED
 
 /// Paso 1: Solicita el porcentaje a invertir vs fondo de emergencia
