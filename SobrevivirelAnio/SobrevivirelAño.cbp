@@ -35,6 +35,8 @@
 		<Unit filename="Creditos.h" />
 		<Unit filename="Interfaz.cpp" />
 		<Unit filename="Interfaz.h" />
+		<Unit filename="Visuales.cpp" />
+		<Unit filename="Visuales.h" />
 		<Unit filename="creditos.cpp" />
 		<Unit filename="eventos.cpp" />
 		<Unit filename="eventos.h" />

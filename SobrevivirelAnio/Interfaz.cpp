@@ -15,18 +15,6 @@ rlutil::anykey("Presione una tecla para continuar...");
 
 }
 
-int calcularMargenX(int ancho_bloque)
-{
-    int x = (rlutil::tcols() - ancho_bloque) / 2;
-
-    // Seguridad: si la ventana es muy angosta, arranca en la columna 1
-    if (x < 1)
-    {
-        x = 1;
-    }
-    return x;
-}
-
 void ubicarCursor(int x, int y)
 {
     rlutil::locate(x, y);
@@ -39,13 +27,7 @@ void imprimirEnBloque(int x, int &y, string texto)
     y++;
 }
 
-void imprimirTextoCentrado(int &y, string texto)
-{
-    int x = calcularMargenX(texto.length());
-    rlutil::locate(x, y);
-    cout << texto;
-    y++;
-}
+
 
 void pausarCentrado(int x, int &y, string mensaje)
 {

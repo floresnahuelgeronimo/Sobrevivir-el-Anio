@@ -10,7 +10,7 @@ void mostrarcreditos()
 {
     limpiarPantalla();
 
-    int x = calcularMargenX(44);
+    int x = 34;
     int y = 5;
 
  imprimirEnBloqueColor(x, y, "============================================",14);

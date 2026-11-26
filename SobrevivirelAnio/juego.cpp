@@ -5,6 +5,7 @@
 #include "menu.h"
 #include "eventos.h"
 #include "inversiones.h"
+#include "Interfaz.h"
 
 using namespace std;
 
@@ -53,7 +54,7 @@ void iniciarNuevaPartida(int &sesion_cantidad_partidas, float &sesion_mejor_patr
         saldo_pesos += sueldo;
         cout << "  >> Sueldo acreditado: +$" << sueldo << endl;
         cout << "  >> Nuevo disponible en pesos: $" << saldo_pesos << endl;
-        //pausarPantalla();
+            pausarPantalla();
 
         // SECCION 2: Imprevistos y descuento de gastos fijos
         mostrarPanelEstado(mes, cantidad_meses, nombre_jugador, saldo_pesos, fondo_emergencia, dolares, btc, sp500, sueldo, gastos_fijos);
@@ -63,7 +64,7 @@ void iniciarNuevaPartida(int &sesion_cantidad_partidas, float &sesion_mejor_patr
         if (game_over)
         {
             registrarMejorYPeorMes(mes, saldo_pesos, ahorro_maximo, mes_mejor, ahorro_minimo, mes_peor);
-            //pausarPantalla();
+            pausarPantalla();
             break;
         }
 
@@ -72,15 +73,15 @@ void iniciarNuevaPartida(int &sesion_cantidad_partidas, float &sesion_mejor_patr
             cout << "  Sin sobrante disponible para ahorrar o invertir este mes." << endl;
             registrarMejorYPeorMes(mes, saldo_pesos, ahorro_maximo, mes_mejor, ahorro_minimo, mes_peor);
             actualizarPreciosEInflacion(mes, INFLACION, precio_dolar, precio_btc, precio_sp500, inflacion_acumulada, gastos_fijos, gastos_alquiler, gastos_servicios, gastos_transporte, gastos_comida);
-            //pausarPantalla();
+            pausarPantalla();
 
             mostrarPanelEstado(mes, cantidad_meses, nombre_jugador, saldo_pesos, fondo_emergencia, dolares, btc, sp500, sueldo, gastos_fijos);
             mostrarTipDelMes(mes);
-//            pausarPantalla();
+            pausarPantalla();
             continue;
         }
 
-        //pausarPantalla();
+            pausarPantalla();
 
         // SECCION 3: Distribucion del sobrante
         mostrarPanelEstado(mes, cantidad_meses, nombre_jugador, saldo_pesos, fondo_emergencia, dolares, btc, sp500, sueldo, gastos_fijos);
@@ -88,14 +89,14 @@ void iniciarNuevaPartida(int &sesion_cantidad_partidas, float &sesion_mejor_patr
         float capital_a_invertir = 0.0;
         float capital_a_fondo    = 0.0;
         decidirDistribucionSobrante(sobrante, capital_a_invertir, capital_a_fondo, fondo_emergencia, saldo_pesos);
-        //pausarPantalla();
+            pausarPantalla();
 
         // SECCION 4: Eleccion del instrumento
         if (capital_a_invertir > 0)
         {
             mostrarPanelEstado(mes, cantidad_meses, nombre_jugador, saldo_pesos, fondo_emergencia, dolares, btc, sp500, sueldo, gastos_fijos);
             decidirInstrumentoInversion(capital_a_invertir, precio_dolar, precio_btc, precio_sp500, saldo_pesos, dolares, btc, sp500);
-           // pausarPantalla();
+            pausarPantalla();
         }
 
         // Actualizacion de precios y estadisticas del mes
@@ -105,18 +106,19 @@ void iniciarNuevaPartida(int &sesion_cantidad_partidas, float &sesion_mejor_patr
         // SECCION 5: Tip educativo
         mostrarPanelEstado(mes, cantidad_meses, nombre_jugador, saldo_pesos, fondo_emergencia, dolares, btc, sp500, sueldo, gastos_fijos);
         mostrarTipDelMes(mes);
-        //pausarPantalla();
+        pausarPantalla();
     }
 
     sesion_cantidad_partidas++;
     mostrarResumenFinal(game_over, nombre_jugador, PATRIMONIO_INICIAL, saldo_pesos, fondo_emergencia, dolares, btc, sp500, precio_dolar, precio_btc, precio_sp500, inflacion_acumulada, mes_mejor, ahorro_maximo, mes_peor, ahorro_minimo, meses_sin_fondo, sesion_mejor_patrimonio, sesion_mejor_jugador);
 
-    //pausarPantalla();
+        pausarPantalla();
 }
 
 void pedirDatosIniciales(string &nombre_jugador, int &cantidad_meses)
 {
-    system("cls");
+    limpiarPantalla();
+
     cout << "============================================" << endl;
     cout << "          NUEVA PARTIDA                     " << endl;
     cout << "============================================" << endl;
@@ -148,7 +150,7 @@ void pedirDatosIniciales(string &nombre_jugador, int &cantidad_meses)
     cout << "  Objetivo: sobrevivir " << cantidad_meses << " mes(es) sin que" << endl;
     cout << "  la inflacion destruya tu poder adquisitivo." << endl;
 
-    //pausarPantalla("  Presiona ENTER para comenzar...");
+        pausarPantalla();
 }
 
 string obtenerNombreMes(int mes)

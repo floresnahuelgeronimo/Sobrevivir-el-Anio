@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1795671222 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\creditos.cpp
+1795708567 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\creditos.cpp
 	<iostream>
 	<cstdlib>
 	"Creditos.h"
@@ -18,7 +18,7 @@
 
 1795018470 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\eventos.h
 
-1795659805 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\interfaz.cpp
+1795708501 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\interfaz.cpp
 	<iostream>
 	"rlutil.h"
 	"interfaz.h"
@@ -43,13 +43,14 @@
 
 1795018606 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\inversiones.h
 
-1795651315 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\juego.cpp
+1795708468 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\juego.cpp
 	<iostream>
 	<cstdlib>
 	"juego.h"
 	"menu.h"
 	"eventos.h"
 	"inversiones.h"
+	"Interfaz.h"
 
 1795018327 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\juego.h
 	<string>
@@ -67,7 +68,7 @@
 
 1795478970 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\portada.h
 
-1795670915 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\menu.cpp
+1795712860 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\menu.cpp
 	<iostream>
 	<cstdlib>
 	"rlutil.h"
@@ -76,8 +77,17 @@
 	"Creditos.h"
 	"Interfaz.h"
 
-1795643084 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\portada.cpp
+1795707399 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\portada.cpp
 	<iostream>
 	"rlutil.h"
 	"Interfaz.h"
+
+1795713018 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\visuales.cpp
+	<iostream>
+	"menu.h"
+	"Interfaz.h"
+
+1795710432 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\glosario.cpp
+
+1795710683 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\visuales.h
 
