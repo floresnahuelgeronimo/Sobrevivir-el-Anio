@@ -1,133 +1,18 @@
 # depslib dependency file v1.0
-1795708567 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\creditos.cpp
-	<iostream>
-	<cstdlib>
-	"Creditos.h"
-	"Interfaz.h"
+1795733622 source:c:\users\nflores\downloads\sobrevivir-el-anio\sobrevivirelanio\creditos.cpp
 
-1795478970 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\creditos.h
+1795733622 c:\users\nflores\downloads\sobrevivir-el-anio\sobrevivirelanio\creditos.h
 
-1795659844 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\interfaz.h
+1795731293 c:\users\nflores\downloads\sobrevivir-el-anio\sobrevivirelanio\interfaz.h
 	<string>
 
-1795018470 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\eventos.cpp
-	<iostream>
-	<cstdlib>
-	<string>
-	"eventos.h"
-
-1795018470 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\eventos.h
-
-1795708501 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\interfaz.cpp
-	<iostream>
-	"rlutil.h"
-	"interfaz.h"
-
-1783078515 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\rlutil.h
-	<iostream>
-	<string>
-	<cstdio>
-	<stdio.h>
-	<string.h>
-	<windows.h>
-	<conio.h>
-	<termios.h>
-	<unistd.h>
-	<sys/ioctl.h>
-	<sys/types.h>
-	<sys/time.h>
-
-1795018606 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\inversiones.cpp
-	<iostream>
-	"inversiones.h"
-
-1795018606 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\inversiones.h
-
-1795708468 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\juego.cpp
-	<iostream>
-	<cstdlib>
-	"juego.h"
-	"menu.h"
-	"eventos.h"
-	"inversiones.h"
-	"Interfaz.h"
-
-1795018327 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\juego.h
-	<string>
-
-1795656435 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\menu.h
-	<string>
-
-1795643084 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\main.cpp
-	<windows.h>
-	<iostream>
-	<ctime>
-	<cstdlib>
-	"menu.h"
-	"portada.h"
-
-1795478970 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\portada.h
-
-1795712860 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\menu.cpp
-	<iostream>
-	<cstdlib>
-	"rlutil.h"
-	"menu.h"
-	"juego.h"
-	"Creditos.h"
-	"Interfaz.h"
-
-1795713545 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\portada.cpp
-	<iostream>
-	"rlutil.h"
-	"Interfaz.h"
-
-1795713018 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\visuales.cpp
-	<iostream>
-	"menu.h"
-	"Interfaz.h"
-
-1795710432 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\glosario.cpp
-
-1795710683 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\visuales.h
-
-1795721374 source:c:\users\nflores\downloads\sobrevivir-el-anio\sobrevivirelanio\creditos.cpp
-	<iostream>
-	<cstdlib>
-	"Creditos.h"
-	"Interfaz.h"
-
-1795721374 c:\users\nflores\downloads\sobrevivir-el-anio\sobrevivirelanio\creditos.h
-
-1795721374 c:\users\nflores\downloads\sobrevivir-el-anio\sobrevivirelanio\interfaz.h
-	<string>
-
-1795721374 source:c:\users\nflores\downloads\sobrevivir-el-anio\sobrevivirelanio\eventos.cpp
+1795730721 source:c:\users\nflores\downloads\sobrevivir-el-anio\sobrevivirelanio\eventos.cpp
 	<iostream>
 	<cstdlib>
 	<string>
 	"eventos.h"
 
 1795721374 c:\users\nflores\downloads\sobrevivir-el-anio\sobrevivirelanio\eventos.h
-
-1795721374 source:c:\users\nflores\downloads\sobrevivir-el-anio\sobrevivirelanio\interfaz.cpp
-	<iostream>
-	"rlutil.h"
-	"interfaz.h"
-
-1795721374 c:\users\nflores\downloads\sobrevivir-el-anio\sobrevivirelanio\rlutil.h
-	<iostream>
-	<string>
-	<cstdio>
-	<stdio.h>
-	<string.h>
-	<windows.h>
-	<conio.h>
-	<termios.h>
-	<unistd.h>
-	<sys/ioctl.h>
-	<sys/types.h>
-	<sys/time.h>
 
 1795721374 source:c:\users\nflores\downloads\sobrevivir-el-anio\sobrevivirelanio\inversiones.cpp
 	<iostream>
@@ -147,7 +32,7 @@
 1795721374 c:\users\nflores\downloads\sobrevivir-el-anio\sobrevivirelanio\juego.h
 	<string>
 
-1795721374 c:\users\nflores\downloads\sobrevivir-el-anio\sobrevivirelanio\menu.h
+1795733453 c:\users\nflores\downloads\sobrevivir-el-anio\sobrevivirelanio\menu.h
 	<string>
 
 1795722318 source:c:\users\nflores\downloads\sobrevivir-el-anio\sobrevivirelanio\main.cpp
@@ -158,26 +43,38 @@
 	"menu.h"
 	"Visuales.h"
 
-1795721374 c:\users\nflores\downloads\sobrevivir-el-anio\sobrevivirelanio\portada.h
+1795733586 c:\users\nflores\downloads\sobrevivir-el-anio\sobrevivirelanio\visuales.h
 
-1795721374 source:c:\users\nflores\downloads\sobrevivir-el-anio\sobrevivirelanio\menu.cpp
+1795733586 source:c:\users\nflores\downloads\sobrevivir-el-anio\sobrevivirelanio\visuales.cpp
+	<iostream>
+	"Visuales.h"
+	"Interfaz.h"
+
+1795731276 source:c:\users\nflores\downloads\sobrevivir-el-anio\sobrevivirelanio\interfaz.cpp
+	<iostream>
+	"rlutil.h"
+	"interfaz.h"
+
+1795721374 c:\users\nflores\downloads\sobrevivir-el-anio\sobrevivirelanio\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1795733453 source:c:\users\nflores\downloads\sobrevivir-el-anio\sobrevivirelanio\menu.cpp
 	<iostream>
 	<cstdlib>
-	"rlutil.h"
 	"menu.h"
 	"juego.h"
 	"Creditos.h"
+	"Visuales.h"
 	"Interfaz.h"
-
-1795721374 source:c:\users\nflores\downloads\sobrevivir-el-anio\sobrevivirelanio\portada.cpp
-	<iostream>
-	"rlutil.h"
-	"Interfaz.h"
-
-1795722280 source:c:\users\nflores\downloads\sobrevivir-el-anio\sobrevivirelanio\visuales.cpp
-	<iostream>
-	"menu.h"
-	"Interfaz.h"
-
-1795722280 c:\users\nflores\downloads\sobrevivir-el-anio\sobrevivirelanio\visuales.h
 

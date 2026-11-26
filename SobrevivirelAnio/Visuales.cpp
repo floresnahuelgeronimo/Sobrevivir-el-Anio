@@ -1,7 +1,7 @@
 #include <iostream>
 
 
-#include "menu.h"
+#include "Visuales.h"
 #include "Interfaz.h"
 
 
@@ -34,8 +34,8 @@ void mostrarGlosario()
     imprimirEnBloqueColor(x, y,"  12. Patrimonio inicial",10);
     imprimirEnBloqueColor(x, y,"  0.  Volver al menu principal",10);
     imprimirEnBloqueColor(x, y,"============================================",10);
-    imprimirEnBloqueColor(x, y,"      Opcion:",15);
-
+    ubicarCursor(x, y);
+    cout << "  Opcion: ";
         opcion_glosario = pedirOpcionEntera();
 
         if (opcion_glosario != 0)
@@ -116,5 +116,65 @@ void mostrarportada()
     cout << " Presione ENTER para comenzar..." << endl;
     cin.get();
 }
+
+void mostrarReglas()
+{
+    int x = 34;
+    int y = 5;
+
+    limpiarPantalla();
+    imprimirEnBloqueColor(x, y, "============================================", 11);
+    imprimirEnBloqueColor(x, y, "              REGLAS DEL JUEGO              ", 11);
+    imprimirEnBloqueColor(x, y, "============================================", 11);
+    y++;
+    imprimirEnBloqueColor(x, y, "  - Cada ronda es un mes. Cobras tu sueldo y", 15);
+    imprimirEnBloqueColor(x, y, "    pagas tus gastos fijos.", 15);
+    imprimirEnBloqueColor(x, y, "  - Pueden aparecer imprevistos al azar.", 15);
+    imprimirEnBloqueColor(x, y, "  - Lo que sobra lo repartis entre fondo de", 15);
+    imprimirEnBloqueColor(x, y, "    emergencia e inversion.", 15);
+    imprimirEnBloqueColor(x, y, "  - 3 meses seguidos en rojo = Game Over.", 12);
+    imprimirEnBloqueColor(x, y, "  - Gana quien mejor conserve su patrimonio", 10);
+    imprimirEnBloqueColor(x, y, "    real frente a la inflacion.", 10);
+    y++;
+    imprimirEnBloqueColor(x, y, "============================================", 11);
+
+    ubicarCursor(x, y + 1);
+    pausarPantalla();
+}
+
+void mostrarcreditos()
+{
+    limpiarPantalla();
+
+    int x = 34;
+    int y = 5;
+
+ imprimirEnBloqueColor(x, y, "============================================",14);
+ imprimirEnBloqueColor(x, y, "                CRÉDITOS                    ",14);
+ imprimirEnBloqueColor(x, y, "============================================",14);
+ imprimirEnBloqueColor(x, y, "                                             ",14);
+ imprimirEnBloqueColor(x, y, "  TRABAJO FINAL INTEGRADOR DE PROGRAMACIÓN   ",14);
+ imprimirEnBloqueColor(x, y, "              Programación I                 ",14);
+ imprimirEnBloqueColor(x, y, "                                             ",14);
+ imprimirEnBloqueColor(x, y, "                Proyecto:                    ",14);
+ imprimirEnBloqueColor(x, y, "  Sobrevivir el Año - Simulador de Finanzas  ",14);
+ imprimirEnBloqueColor(x, y, "                                             ",14);
+ imprimirEnBloqueColor(x, y, "              Integrantes:                   ",14);
+ imprimirEnBloqueColor(x, y, "         Geronimo Nahuel Flores              ",14);
+ imprimirEnBloqueColor(x, y, "               Mateo Sauret                  ",14);
+ imprimirEnBloqueColor(x, y, "           Tobias Uriel Vera                 ",14);
+ imprimirEnBloqueColor(x, y, "         Francisco Roman Martinez            ",14);
+ imprimirEnBloqueColor(x, y, "               Comisión:13                   ",14);
+ imprimirEnBloqueColor(x, y, "                Año: 2026                    ",14);
+ imprimirEnBloqueColor(x, y, "                                             ",14);
+ imprimirEnBloqueColor(x, y, "            Gracias por jugar!               ",14);
+ imprimirEnBloqueColor(x, y, "============================================",14);
+
+   ubicarCursor(x, y);
+    pausarPantalla();
+
+}
+
+
 
 

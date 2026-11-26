@@ -64,4 +64,20 @@ void imprimirEnBloqueColor(int x, int &y, string texto, int color)
     y++;
 }
 
+int pedirOpcionEntera()
+{
+    int opcion;
+    cin >> opcion;
+
+    if (cin.fail())
+    {
+        cin.clear();
+        cin.ignore(10000, '\n');
+        return -1;
+    }
+
+    cin.ignore(10000, '\n');
+    return opcion;
+}
+
 

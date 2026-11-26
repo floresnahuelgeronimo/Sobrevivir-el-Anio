@@ -18,6 +18,14 @@ void aplicarEventosFijos(int mes, float &sueldo, float &saldo_pesos, float &gast
         hubo_evento = true;
     }
 
+    if (mes == 3)
+    {
+        cout << "  ** MATRICULA DEL CURSO **" << endl;
+        cout << "  Pagas la inscripcion: -$40.000" << endl;
+        saldo_pesos -= 40000.0;
+        hubo_evento = true;
+    }
+
     if (mes == 4 || mes == 7 || mes == 10)
     {
         float aumento = sueldo * 0.15;
