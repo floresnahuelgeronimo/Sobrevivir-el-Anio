@@ -1,10 +1,35 @@
 #include <iostream>
 #include <cstdlib>
+
+#include "rlutil.h"
 #include "menu.h"
 #include "juego.h"
 #include "Creditos.h"
+#include "Interfaz.h"
 using namespace std;
 
+char pedirOpcionMenu()
+{
+int opcion;
+    int x = calcularMargenX(44); // El recuadro mide 44 caracteres de ancho
+    int y = 5;                   // Margen superior (empieza en la fila 5)
+
+    limpiarPantalla();
+    imprimirEnBloqueColor(x, y, "============================================",5);
+    imprimirEnBloqueColor(x, y, "             SOBREVIVIR EL AÑO              ",5);
+    imprimirEnBloqueColor(x, y, "       Simulador de Finanzas en Argentina   ",5);
+    imprimirEnBloqueColor(x, y, "============================================",5);
+    imprimirEnBloqueColor(x, y, "  1. Nueva Partida                          ",5);
+    imprimirEnBloqueColor(x, y, "  2. Highscore de la sesion                 ",5);
+    imprimirEnBloqueColor(x, y, "  3. Glosario Financiero                    ",5);
+    imprimirEnBloqueColor(x, y, "  4. Creditos                               ",5);
+    imprimirEnBloqueColor(x, y, "  0. Salir                                  ",5);
+    imprimirEnBloqueColor(x, y, "============================================",5);
+    ubicarCursor(x, y);
+    cout << "  Ingrese una opcion: ";
+    cin >> opcion;
+    return opcion;
+}
 void ejecutarMenuPrincipal()
 {
     // Variables de sesion (locales a esta funcion, respetan los nombres del PDF)
@@ -41,35 +66,17 @@ void ejecutarMenuPrincipal()
 
         default:
             cout << endl << "  Opcion invalida. Intenta de nuevo." << endl;
-            pausarPantalla("  Presiona ENTER para continuar...");
+            pausarPantalla();
             break;
         }
     }
 }
 
-int pedirOpcionMenu()
-{
-    int opcion;
-    system("cls");
-    cout << "============================================" << endl;
-    cout << "         SOBREVIVIR EL AÑO                 " << endl;
-    cout << "   Simulador de Finanzas en Argentina       " << endl;
-    cout << "============================================" << endl;
-    cout << "  1. Nueva Partida                          " << endl;
-    cout << "  2. Highscore de la sesion                 " << endl;
-    cout << "  3. Glosario Financiero                    " << endl;
-    cout << "  4. Creditos                               " << endl;
-    cout << "  0. Salir                                  " << endl;
-    cout << "============================================" << endl;
-    cout << "  Ingrese una opcion: ";
-    cin  >> opcion;
-    cin.ignore();
-    return opcion;
-}
+
 
 void mostrarHighscore(int sesion_cantidad_partidas, float sesion_mejor_patrimonio, string sesion_mejor_jugador)
 {
-    system("cls");
+limpiarPantalla();
     cout << "============================================" << endl;
     cout << "         HIGHSCORE DE LA SESION             " << endl;
     cout << "============================================" << endl;
@@ -87,12 +94,12 @@ void mostrarHighscore(int sesion_cantidad_partidas, float sesion_mejor_patrimoni
         cout << "  Mejor patrimonio real: $" << sesion_mejor_patrimonio << endl;
     }
 
-    pausarPantalla("  Presiona ENTER para volver al menu...");
+    pausarPantalla();
 }
 
 void mostrarGlosario()
 {
-    int opcion_glosario = -1;
+    int opcion_glosario=-1;
     while (opcion_glosario != 0)
     {
         system("cls");
@@ -114,16 +121,19 @@ void mostrarGlosario()
         cout << "  0.  Volver al menu principal"     << endl;
         cout << "============================================" << endl;
         cout << "  Opcion: ";
-        cin  >> opcion_glosario;
-        cin.ignore();
+        opcion_glosario = pedirOpcionEntera();
 
         if (opcion_glosario != 0)
         {
             mostrarDefinicionGlosario(opcion_glosario);
-            pausarPantalla("  Presiona ENTER para volver al glosario...");
+            pausarPantalla();
+            }else if (opcion_glosario == 0){
+            return;
+            }
+
         }
     }
-}
+
 
 void mostrarDefinicionGlosario(int opcion_glosario)
 {
@@ -165,10 +175,10 @@ void mostrarDefinicionGlosario(int opcion_glosario)
         cout << "--------------------------------------------" << endl;
         cout << "  " << definiciones[opcion_glosario - 1] << endl;
     }
-    else
-    {
-        cout << "  Opcion invalida." << endl;
-    }
+else if (opcion_glosario != 0) {
+    cout << "Opcion invalida." << endl;
+    pausarPantalla();
+}
     cout << "============================================" << endl;
 }
 
@@ -191,9 +201,15 @@ bool confirmarSalida()
     return false;
 }
 
-void pausarPantalla(string mensaje)
-{
-    cout << endl;
-    cout << mensaje;
-    cin.get();
+
+int pedirOpcionEntera() {
+    int opcion;
+    cin >> opcion;
+    if (!opcion) {
+        cin.clear();             // Destraba cin para no romper el menú principal
+        cin.ignore(10000, '\n'); // Limpia las letras que quedaron en el buffer
+        return -1;               // Fuerza opción inválida para tu else/default
+    }
+    cin.ignore(10000, '\n');     // Limpia el Enter o texto sobrante
+    return opcion;
 }

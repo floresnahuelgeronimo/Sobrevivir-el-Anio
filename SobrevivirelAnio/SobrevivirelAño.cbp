@@ -33,6 +33,8 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="Creditos.h" />
+		<Unit filename="Interfaz.cpp" />
+		<Unit filename="Interfaz.h" />
 		<Unit filename="creditos.cpp" />
 		<Unit filename="eventos.cpp" />
 		<Unit filename="eventos.h" />
@@ -45,6 +47,7 @@
 		<Unit filename="menu.h" />
 		<Unit filename="portada.cpp" />
 		<Unit filename="portada.h" />
+		<Unit filename="rlutil.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

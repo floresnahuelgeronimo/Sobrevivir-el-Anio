@@ -1,39 +1,41 @@
-#include "Creditos.h"
 #include <iostream>
 #include <cstdlib>
+
+#include "Creditos.h"
+#include "Interfaz.h"
+
 using namespace std;
 
 void mostrarcreditos()
 {
-    system("cls");
+    limpiarPantalla();
 
-    cout << "============================================" << endl;
-    cout << "                CRÉDITOS                    " << endl;
-    cout << "============================================" << endl;
-    cout << endl;
+    int x = calcularMargenX(44);
+    int y = 5;
 
-    cout << "TRABAJO FINAL INTEGRADOR DE PROGRAMACIÓN" << endl;
-    cout << "Programación I" << endl;
-    cout << endl;
+ imprimirEnBloqueColor(x, y, "============================================",14);
+ imprimirEnBloqueColor(x, y, "                CRÉDITOS                    ",14);
+ imprimirEnBloqueColor(x, y, "============================================",14);
+ imprimirEnBloqueColor(x, y, "                                             ",14);
+ imprimirEnBloqueColor(x, y, "  TRABAJO FINAL INTEGRADOR DE PROGRAMACIÓN   ",14);
+ imprimirEnBloqueColor(x, y, "              Programación I                 ",14);
+ imprimirEnBloqueColor(x, y, "                                             ",14);
+ imprimirEnBloqueColor(x, y, "                Proyecto:                    ",14);
+ imprimirEnBloqueColor(x, y, "  Sobrevivir el Año - Simulador de Finanzas  ",14);
+ imprimirEnBloqueColor(x, y, "                                             ",14);
+ imprimirEnBloqueColor(x, y, "              Integrantes:                   ",14);
+ imprimirEnBloqueColor(x, y, "         Geronimo Nahuel Flores              ",14);
+ imprimirEnBloqueColor(x, y, "               Mateo Sauret                  ",14);
+ imprimirEnBloqueColor(x, y, "           Tobias Uriel Vera                 ",14);
+ imprimirEnBloqueColor(x, y, "         Francisco Roman Martinez            ",14);
+ imprimirEnBloqueColor(x, y, "               Comisión:13                   ",14);
+ imprimirEnBloqueColor(x, y, "                Año: 2026                    ",14);
+ imprimirEnBloqueColor(x, y, "                                             ",14);
+ imprimirEnBloqueColor(x, y, "            Gracias por jugar!               ",14);
+ imprimirEnBloqueColor(x, y, "============================================",14);
 
-    cout << "Proyecto:" << endl;
-    cout << "Sobrevivir el Año - Simulador de Finanzas" << endl;
-    cout << endl;
-
-    cout << "Integrantes:" << endl;
-    cout << "Gero" << endl;
-    cout << "Mateo" << endl;
-    cout << "Tobias" << endl;
-    cout << "Francisco" << endl;
-    cout << "Comisión:13 " << endl;
-    cout << "Año: 2026" << endl;
-    cout << endl;
-
-    cout << "Gracias por jugar!" << endl;
-    cout << endl;
-
-    cout << "Presione ENTER para volver al menú...";
-
+   ubicarCursor(x, y);
+    pausarPantalla();
     cin.get();
 
 }

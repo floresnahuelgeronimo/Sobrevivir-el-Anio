@@ -1,0 +1,83 @@
+# depslib dependency file v1.0
+1795671222 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\creditos.cpp
+	<iostream>
+	<cstdlib>
+	"Creditos.h"
+	"Interfaz.h"
+
+1795478970 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\creditos.h
+
+1795659844 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\interfaz.h
+	<string>
+
+1795018470 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\eventos.cpp
+	<iostream>
+	<cstdlib>
+	<string>
+	"eventos.h"
+
+1795018470 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\eventos.h
+
+1795659805 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\interfaz.cpp
+	<iostream>
+	"rlutil.h"
+	"interfaz.h"
+
+1783078515 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1795018606 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\inversiones.cpp
+	<iostream>
+	"inversiones.h"
+
+1795018606 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\inversiones.h
+
+1795651315 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\juego.cpp
+	<iostream>
+	<cstdlib>
+	"juego.h"
+	"menu.h"
+	"eventos.h"
+	"inversiones.h"
+
+1795018327 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\juego.h
+	<string>
+
+1795656435 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\menu.h
+	<string>
+
+1795643084 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\main.cpp
+	<windows.h>
+	<iostream>
+	<ctime>
+	<cstdlib>
+	"menu.h"
+	"portada.h"
+
+1795478970 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\portada.h
+
+1795670915 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\menu.cpp
+	<iostream>
+	<cstdlib>
+	"rlutil.h"
+	"menu.h"
+	"juego.h"
+	"Creditos.h"
+	"Interfaz.h"
+
+1795643084 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\portada.cpp
+	<iostream>
+	"rlutil.h"
+	"Interfaz.h"
+

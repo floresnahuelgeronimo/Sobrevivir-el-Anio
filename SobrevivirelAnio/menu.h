@@ -9,7 +9,7 @@ using namespace std;
 void ejecutarMenuPrincipal();
 
 // Muestra el menu principal y devuelve la opcion ingresada
-int pedirOpcionMenu();
+char pedirOpcionMenu();
 
 // Muestra el ranking de la sesion actual
 void mostrarHighscore(int sesion_cantidad_partidas, float sesion_mejor_patrimonio, string sesion_mejor_jugador);
@@ -24,6 +24,7 @@ void mostrarDefinicionGlosario(int opcion_glosario);
 bool confirmarSalida();
 
 // Pausa la ejecucion esperando que el usuario presione ENTER
-void pausarPantalla(string mensaje);
+void pausarPantalla();
 
+int pedirOpcionEntera();
 #endif // MENU_H_INCLUDED

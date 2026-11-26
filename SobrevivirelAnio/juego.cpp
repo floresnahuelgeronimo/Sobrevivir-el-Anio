@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+
 #include "juego.h"
 #include "menu.h"
 #include "eventos.h"
@@ -34,8 +35,8 @@ void iniciarNuevaPartida(int &sesion_cantidad_partidas, float &sesion_mejor_patr
 
     int   meses_en_rojo       = 0;
     int   meses_sin_fondo     = 0;
-    float ahorro_maximo       = -9999999.0;
-    float ahorro_minimo       =  9999999.0;
+    float ahorro_maximo       = 0.0;
+    float ahorro_minimo       = 0.0;
     int   mes_mejor           = 1;
     int   mes_peor            = 1;
     float inflacion_acumulada = 1.0;
@@ -52,7 +53,7 @@ void iniciarNuevaPartida(int &sesion_cantidad_partidas, float &sesion_mejor_patr
         saldo_pesos += sueldo;
         cout << "  >> Sueldo acreditado: +$" << sueldo << endl;
         cout << "  >> Nuevo disponible en pesos: $" << saldo_pesos << endl;
-        pausarPantalla("  Presiona ENTER para ver los imprevistos y gastos del mes...");
+        //pausarPantalla();
 
         // SECCION 2: Imprevistos y descuento de gastos fijos
         mostrarPanelEstado(mes, cantidad_meses, nombre_jugador, saldo_pesos, fondo_emergencia, dolares, btc, sp500, sueldo, gastos_fijos);
@@ -62,7 +63,7 @@ void iniciarNuevaPartida(int &sesion_cantidad_partidas, float &sesion_mejor_patr
         if (game_over)
         {
             registrarMejorYPeorMes(mes, saldo_pesos, ahorro_maximo, mes_mejor, ahorro_minimo, mes_peor);
-            pausarPantalla("  Presiona ENTER para ver las estadisticas finales...");
+            //pausarPantalla();
             break;
         }
 
@@ -71,15 +72,15 @@ void iniciarNuevaPartida(int &sesion_cantidad_partidas, float &sesion_mejor_patr
             cout << "  Sin sobrante disponible para ahorrar o invertir este mes." << endl;
             registrarMejorYPeorMes(mes, saldo_pesos, ahorro_maximo, mes_mejor, ahorro_minimo, mes_peor);
             actualizarPreciosEInflacion(mes, INFLACION, precio_dolar, precio_btc, precio_sp500, inflacion_acumulada, gastos_fijos, gastos_alquiler, gastos_servicios, gastos_transporte, gastos_comida);
-            pausarPantalla("  Presiona ENTER para ver el tip del mes...");
+            //pausarPantalla();
 
             mostrarPanelEstado(mes, cantidad_meses, nombre_jugador, saldo_pesos, fondo_emergencia, dolares, btc, sp500, sueldo, gastos_fijos);
             mostrarTipDelMes(mes);
-            pausarPantalla("  Presiona ENTER para pasar al siguiente mes...");
+//            pausarPantalla();
             continue;
         }
 
-        pausarPantalla("  Presiona ENTER para administrar tu sobrante...");
+        //pausarPantalla();
 
         // SECCION 3: Distribucion del sobrante
         mostrarPanelEstado(mes, cantidad_meses, nombre_jugador, saldo_pesos, fondo_emergencia, dolares, btc, sp500, sueldo, gastos_fijos);
@@ -87,14 +88,14 @@ void iniciarNuevaPartida(int &sesion_cantidad_partidas, float &sesion_mejor_patr
         float capital_a_invertir = 0.0;
         float capital_a_fondo    = 0.0;
         decidirDistribucionSobrante(sobrante, capital_a_invertir, capital_a_fondo, fondo_emergencia, saldo_pesos);
-        pausarPantalla("  Presiona ENTER para elegir instrumento de inversion...");
+        //pausarPantalla();
 
         // SECCION 4: Eleccion del instrumento
         if (capital_a_invertir > 0)
         {
             mostrarPanelEstado(mes, cantidad_meses, nombre_jugador, saldo_pesos, fondo_emergencia, dolares, btc, sp500, sueldo, gastos_fijos);
             decidirInstrumentoInversion(capital_a_invertir, precio_dolar, precio_btc, precio_sp500, saldo_pesos, dolares, btc, sp500);
-            pausarPantalla("  Presiona ENTER para cerrar el mes...");
+           // pausarPantalla();
         }
 
         // Actualizacion de precios y estadisticas del mes
@@ -104,13 +105,13 @@ void iniciarNuevaPartida(int &sesion_cantidad_partidas, float &sesion_mejor_patr
         // SECCION 5: Tip educativo
         mostrarPanelEstado(mes, cantidad_meses, nombre_jugador, saldo_pesos, fondo_emergencia, dolares, btc, sp500, sueldo, gastos_fijos);
         mostrarTipDelMes(mes);
-        pausarPantalla("  Presiona ENTER para pasar al siguiente mes...");
+        //pausarPantalla();
     }
 
     sesion_cantidad_partidas++;
     mostrarResumenFinal(game_over, nombre_jugador, PATRIMONIO_INICIAL, saldo_pesos, fondo_emergencia, dolares, btc, sp500, precio_dolar, precio_btc, precio_sp500, inflacion_acumulada, mes_mejor, ahorro_maximo, mes_peor, ahorro_minimo, meses_sin_fondo, sesion_mejor_patrimonio, sesion_mejor_jugador);
 
-    pausarPantalla("  Presiona ENTER para volver al menu principal...");
+    //pausarPantalla();
 }
 
 void pedirDatosIniciales(string &nombre_jugador, int &cantidad_meses)
@@ -147,7 +148,7 @@ void pedirDatosIniciales(string &nombre_jugador, int &cantidad_meses)
     cout << "  Objetivo: sobrevivir " << cantidad_meses << " mes(es) sin que" << endl;
     cout << "  la inflacion destruya tu poder adquisitivo." << endl;
 
-    pausarPantalla("  Presiona ENTER para comenzar...");
+    //pausarPantalla("  Presiona ENTER para comenzar...");
 }
 
 string obtenerNombreMes(int mes)
@@ -217,7 +218,15 @@ bool pagarGastosYVerificarGameOver(int mes, float gastos_fijos, float fondo_emer
 
 void registrarMejorYPeorMes(int mes, float monto_evaluado, float &ahorro_maximo, int &mes_mejor, float &ahorro_minimo, int &mes_peor)
 {
-    if (monto_evaluado > ahorro_maximo)
+if (mes == 1)
+    {
+        // En el primer mes, ese monto es automaticamente el mejor y el peor hasta ahora
+        ahorro_maximo = monto_evaluado;
+        mes_mejor     = mes;
+        ahorro_minimo = monto_evaluado;
+        mes_peor      = mes;
+    }
+    else if (monto_evaluado > ahorro_maximo)
     {
         ahorro_maximo = monto_evaluado;
         mes_mejor     = mes;
