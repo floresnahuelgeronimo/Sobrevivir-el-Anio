@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <iomanip>
 
 #include "juego.h"
 #include "menu.h"
@@ -179,7 +180,7 @@ void mostrarPanelEstado(int mes, int cantidad_meses, string nombre_jugador, floa
     cout << "  Disponible en pesos:  $ " << saldo_pesos      << endl;
     cout << "  Fondo de emergencia:  $ " << fondo_emergencia << endl;
     cout << "  Dolares:              "   << dolares          << " USD" << endl;
-    cout << "  BTC:                  "   << btc              << " BTC" << endl;
+    cout << "  BTC:                  " << setprecision(6) << btc << setprecision(2) << " BTC" << endl;
     cout << "  S&P 500:              "   << sp500            << " cuotas" << endl;
     cout << "------------------------------------------------------------" << endl;
     cout << "  Sueldo del mes:       $ " << sueldo           << endl;
@@ -283,7 +284,7 @@ void mostrarResumenFinal(bool game_over, string nombre_jugador, float patrimonio
     cout << "  - Disponible en pesos:      $" << saldo_pesos        << endl;
     cout << "  - Fondo de emergencia:      $" << fondo_emergencia   << endl;
     cout << "  - Dolares (" << dolares << " USD):          $" << patrimonio_dolares << endl;
-    cout << "  - Bitcoin (" << btc << " BTC):        $" << patrimonio_btc     << endl;
+    cout << "  - Bitcoin (" << setprecision(6) << btc << setprecision(2) << " BTC):        $" << patrimonio_btc << endl;
     cout << "  - S&P 500 (" << sp500 << " cuotas):   $" << patrimonio_sp500   << endl;
     cout << "  ----------------------------------------------------------" << endl;
     cout << "  PATRIMONIO NOMINAL FINAL:   $" << patrimonio_nominal << endl;

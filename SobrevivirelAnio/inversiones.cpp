@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include "inversiones.h"
 
 using namespace std;
@@ -81,8 +82,10 @@ void decidirInstrumentoInversion(float capital_a_invertir, float precio_dolar, f
         float usd_disponibles = capital_a_invertir / precio_dolar;
         float btc_comprado    = usd_disponibles / precio_btc;
         btc += btc_comprado;
-        cout << "  >> Compraste " << btc_comprado << " BTC." << endl;
+        cout << "  >> Compraste " << setprecision(6) << btc_comprado << setprecision(2) << " BTC." << endl;
         break;
+
+
     }
     case 4:
     {

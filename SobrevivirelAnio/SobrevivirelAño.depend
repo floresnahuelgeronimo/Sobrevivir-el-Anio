@@ -108,15 +108,17 @@
 1795741677 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\interfaz.h
 	<string>
 
-1795018606 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\inversiones.cpp
+1795770771 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\inversiones.cpp
 	<iostream>
+	<iomanip>
 	"inversiones.h"
 
 1795739167 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\inversiones.h
 
-1795708468 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\juego.cpp
+1795770800 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\juego.cpp
 	<iostream>
 	<cstdlib>
+	<iomanip>
 	"juego.h"
 	"menu.h"
 	"eventos.h"
@@ -129,11 +131,12 @@
 1795739167 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\menu.h
 	<string>
 
-1795739167 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\main.cpp
+1795770732 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\main.cpp
 	<windows.h>
 	<iostream>
 	<ctime>
 	<cstdlib>
+	<iomanip>
 	"menu.h"
 	"Visuales.h"
 
