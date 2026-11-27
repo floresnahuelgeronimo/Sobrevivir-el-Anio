@@ -3,7 +3,6 @@
 
 #include "menu.h"
 #include "juego.h"
-#include "Creditos.h"
 #include "Visuales.h"
 #include "Interfaz.h"
 
@@ -15,6 +14,7 @@ int pedirOpcionMenu()
     int y = 9;
 
     limpiarPantalla();
+
     imprimirEnBloqueColor(x, y, "============================================", 5);
     imprimirEnBloqueColor(x, y, "             SOBREVIVIR EL AÑO              ", 5);
     imprimirEnBloqueColor(x, y, "       Simulador de Finanzas en Argentina   ", 5);
@@ -27,6 +27,7 @@ int pedirOpcionMenu()
     imprimirEnBloqueColor(x, y, "  0. Salir                                  ", 5);
     imprimirEnBloqueColor(x, y, "============================================", 5);
     ubicarCursor(x, y);
+
     cout << "  Ingrese una opcion: ";
 
     return pedirOpcionEntera();

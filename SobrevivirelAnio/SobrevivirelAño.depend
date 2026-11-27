@@ -78,3 +78,77 @@
 	"Visuales.h"
 	"Interfaz.h"
 
+1795739167 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\eventos.cpp
+	<iostream>
+	<cstdlib>
+	<string>
+	"eventos.h"
+
+1795018470 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\eventos.h
+
+1795739590 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\interfaz.cpp
+	<iostream>
+	"rlutil.h"
+	"interfaz.h"
+
+1783078515 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1795741677 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\interfaz.h
+	<string>
+
+1795018606 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\inversiones.cpp
+	<iostream>
+	"inversiones.h"
+
+1795739167 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\inversiones.h
+
+1795708468 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\juego.cpp
+	<iostream>
+	<cstdlib>
+	"juego.h"
+	"menu.h"
+	"eventos.h"
+	"inversiones.h"
+	"Interfaz.h"
+
+1795018327 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\juego.h
+	<string>
+
+1795739167 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\menu.h
+	<string>
+
+1795739167 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\main.cpp
+	<windows.h>
+	<iostream>
+	<ctime>
+	<cstdlib>
+	"menu.h"
+	"Visuales.h"
+
+1795739167 e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\visuales.h
+
+1795741677 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\menu.cpp
+	<iostream>
+	<cstdlib>
+	"menu.h"
+	"juego.h"
+	"Visuales.h"
+	"Interfaz.h"
+
+1795739167 source:e:\tpi - sobrevivirelanio\sobrevivir-el-anio\sobrevivirelanio\visuales.cpp
+	<iostream>
+	"Visuales.h"
+	"Interfaz.h"
+
